@@ -55,8 +55,10 @@ import "../styles/global.css";
   font-family: 'Lilita One', cursive;
 }
 .menu a:hover {
+  transform: scale(1.5);
   color: #FBD21A;            /* hover color */
 }
+
 			.nav-links {
   list-style: none;
   padding: 0;
@@ -64,6 +66,9 @@ import "../styles/global.css";
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.nav-links: :hover {
+  transform: scale(1.5);
 }
 .logo {
   width: 120%;     /* or try 50px or 100px depending on your sidebar width */
@@ -78,6 +83,18 @@ import "../styles/global.css";
 				font-weight: bold;
 				color: #333;
 			}
+			.social-icon {
+  width: 24px; /* or adjust to your icon's best size */
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+a {
+	text-decoration: none;
+}
 
 		</style>
 	</head>
@@ -99,7 +116,23 @@ import "../styles/global.css";
         </ul>
 				</nav>
 				</div>
-				<div class="socials">Socials</div>
+				<div class="socials">
+					  <a href="https://www.instagram.com/b.bxtxrt?igsh=MWRvYXNtbG5xdXR5Ng%3D%3D&utm_source=qr" target="_blank" rel="noopener">
+							<img src="/public/images/icons/instagram.png" alt="Instagram" class="social-icon" />
+							</a>
+							<a href="https://www.linkedin.com/in/amruta-bhatt-5153511a6/" target="_blank" rel="noopener">
+    <img src="/public/images/icons/linkedin.png" alt="LinkedIn" class="social-icon" />
+  </a>
+		<a href="https://www.behance.net/amrutabhatt1412" target="_blank" rel="noopener">
+    <img src="/public/images/icons/behance.png" alt="Behance" class="social-icon" />
+  </a>
+
+	<a href="https://www.youtube.com/@amrutabhatt3739" target="_blank" rel="noopener">
+		<img src="/public/images/icons/youtube.png" alt="Youtube" class="social-icon" >
+	</a>
+
+
+				</div>
 			</aside>
 			<main class="main-content">
 				<slot />
