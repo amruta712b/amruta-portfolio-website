@@ -1,0 +1,46 @@
+---
+import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
+import "../styles/global.css";
+---
+<FixedSidebarLayout title="About">
+  <section class="about-content">
+    <div class="text-box">
+      <h2 class="main-text">Just kidding :P</h2>
+      <p class="sub-text">I’m an introvert</p>
+    </div>
+  </section>
+</FixedSidebarLayout>
+<style>
+  .about-content {
+  height: 100vh;
+  padding: 100px 40px;
+}
+.text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-text {
+  max-width: 210px;
+  font-family: 'Lilita One', cursive;
+  font-size: 2rem;
+  background: white;
+  display: inline-block;
+  padding: 3px 6px;
+  margin: 0;
+  font-weight: bold;
+  color: #FBD21A;
+}
+
+.sub-text {
+  max-width: 130px;
+  font-size: 1.25rem;
+  font-family: 'Source Sans 3', sans-serif;
+  background: white;
+  display: inline-block;
+  padding: 3px 6px;
+  margin: 0;
+  color: #FBD21A;
+}
+
+</style>
