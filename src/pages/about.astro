@@ -1,0 +1,77 @@
+---
+import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
+---
+<FixedSidebarLayout title="About">
+  <div class="about-page">
+
+    <section class="intro-section">
+      <h1 class="highlight-line">Namaste! I’m Amruta Bhatt</h1>
+      <p class="highlight-line subtext">based, in Vadodara</p>
+       </section>
+       <section class="profession">
+       <h1 class="highlight-line role-heading">I am an</h1>
+       <p class="highlight-line subtext">Architect. Illustrator. Visual designer</p>
+       </section>
+       <section class="description">
+        <h1 class="highlight-line role-heading">Curls, love for dogs</h1>
+         <p class="highlight-line subtext">describe me aptly</p>
+       </section>
+      </div>
+        <a href="#more-about" class="more-about-button">
+        click here
+        <span class="cta-subtext">to know more about me</span>
+      </a>
+  </FixedSidebarLayout>
+
+
+  <style>
+.highlight-line {
+    background-color: white;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+    .about-page {
+    padding: 2rem;
+    font-weight: 700;
+    text-align: left;
+    color: #FBD21A;
+  }
+
+  .role-heading {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtext {
+    font-size: 1.25rem;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .more-about-button {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: #ffffff;
+    color: #FBD21A;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .more-about-button:hover {
+    background-color: black;
+    color: #FBD21A;
+  }
+
+  .more-about-subtext {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-top: 0.25rem;
+    color: #444;
+  }
+
+  </style>
