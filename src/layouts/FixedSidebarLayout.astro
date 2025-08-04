@@ -27,36 +27,31 @@ import "../styles/global.css";
 				display: flex;
 				min-height: 100vh;
 			}
-
 			.sidebar {
 				position: fixed;
 				top: 0;
 				left: 0;
 				width: 200px;
 				height: 100vh;
-				background: #f8f9fa;
+				background: #ffffff;
 				padding: 20px;
 				overflow-y: auto;
 				border-right: 1px solid #e9ecef;
 			}
 
-
-
-			.logo {
-				font-size: 24px;
-				font-weight: bold;
-				margin-bottom: 30px;
-				color: #333;
-				 font-family: "Lilita One", sans-serif;
-				 font-weight: 400;
-				  font-style: normal;
+.main-content {
+				margin-left: 200px;     /* padding 40px */
+				flex: 1;
+				background: #FBD21A;
 			}
-
 			.menu {
-				font-size: 18px;
-				margin-bottom: 20px;
-				color: #666;
-			}
+  list-style: none;      /* removes bullet points */
+  padding: 0;            /* removes default padding */
+  margin: 0;
+  display: flex;         /* optional: horizontal layout */
+  flex-direction: column; /* or row for horizontal */
+  gap: 1rem;             /* space between links */
+}
 
 			.socials {
 				position: absolute;
@@ -71,7 +66,16 @@ import "../styles/global.css";
 		<div class="layout">
 			<aside class="sidebar">
 				<div class="logo">Logo</div>
-				<div class="menu">Menu Content</div>
+				<div class="menu">
+					<nav>
+					 <ul class="nav-links">
+          <li><a href="/about">About</a></li>
+          <li><a href="/cv">CV</a></li>
+          <li><a href="/works">Works</a></li>
+          <li><a href="/play">Play</a></li>
+        </ul>
+				</nav>
+				</div>
 				<div class="socials">Socials</div>
 			</aside>
 			<main class="main-content">

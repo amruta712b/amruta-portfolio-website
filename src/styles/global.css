@@ -7,16 +7,10 @@
 }
 .namaste {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 24px;
+  bottom: 5px;
+  right: 5px;
+  font-size: 100px;
   font-family: 'Lilita One', cursive;
-  color: #fff8b3; 
+  color: #fff7b3c6;
   z-index: 10;
 }
-.main-content {
-				margin-left: 200px;
-				flex: 1;
-				padding: 40px;
-				background: #FBD21A;
-			}
