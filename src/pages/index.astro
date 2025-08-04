@@ -1,6 +1,7 @@
 ---
 // index.astro
 import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
+import "../styles/global.css";
 
 const windowIllustrations = [
   { src: '/images/window1.png', top: '10%', left: '60%' },
@@ -11,14 +12,5 @@ const windowIllustrations = [
 ---
 <FixedSidebarLayout title="Home">
   <div class="homepage">
-    {windowIllustrations.map((win) => (
-      <img
-        src={win.src}
-        alt="Window Illustration"
-        class="window"
-        style={`top: ${win.top}; left: ${win.left};`}
-      />
-    ))}
-
-    <div class="namaste">namaste</div>
+<div class="namaste">namaste</div>
   </div>
