@@ -3,36 +3,43 @@
 import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
 import "../styles/global.css";
 
-const windowIllustrations = [
-	{
-		src: '/public/images/homepage/windows/window1.png',
-		 top: '10%',
-    left: '60%',
-    link: '#' // You can later replace this with real links
-  }
-]
 ---
 
 <FixedSidebarLayout title="Home">
   <div class="homepage">
 	<h1 class="namaste">Namaste</h1>
   </div>
-	<div class="window-container">
-    {
-      windowIllustrations.map((win) => (
-        <a href={win.link} class="window-link" style={`top: ${win.top}; left: ${win.left};`}>
-          <img src={win.src} alt="Window" class="window-img" />
-        </a>
-      ))
-    }
-
+	 <div class="window-container">
+    <a href="#" class="window-link" style="top: 10%; left: 80%;" >
+      <img src="/public/images/homepage/windows/window1.png" alt="Window" class="window-img" />
+    </a>
+    <a href="#" class="window-link" style="top: 25%; left: 30%;">
+      <img src="/public/images/homepage/windows/window2.png" alt="Window" class="window-img" />
+    </a>
+    <a href="#" class="window-link" style="top: 50%; left: 70%;">
+      <img src="/public/images/homepage/windows/window3.png" alt="Window" class="window-img" />
+    </a>
+    <a href="#" class="window-link" style="top: 70%; left: 20%;">
+      <img src="/public/images/homepage/windows/window4.png" alt="Window" class="window-img" />
+    </a>
+  </div>
 </FixedSidebarLayout>
 
 <style>
-	.window-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+
+.window-link {
+  position: absolute;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+.window-link:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.window-img {
+  width: 120px;
+  height: auto;
 }
 	.homepage {
   position: relative;
