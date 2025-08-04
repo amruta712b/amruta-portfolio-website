@@ -1,16 +1,24 @@
 ---
+// index.astro
+import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
 
+const windowIllustrations = [
+  { src: '/images/window1.png', top: '10%', left: '60%' },
+  { src: '/images/window2.png', top: '30%', left: '20%' },
+  { src: '/images/window3.png', top: '50%', left: '70%' },
+  // Add more if you have
+];
 ---
+<FixedSidebarLayout title="Home">
+  <div class="homepage">
+    {windowIllustrations.map((win) => (
+      <img
+        src={win.src}
+        alt="Window Illustration"
+        class="window"
+        style={`top: ${win.top}; left: ${win.left};`}
+      />
+    ))}
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+    <div class="namaste">namaste</div>
+  </div>
