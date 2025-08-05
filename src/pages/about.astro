@@ -33,10 +33,16 @@ import Footer from '../layouts/Footer.astro';
   </div>
 
   <div class="note-row">
-    <img src="/images/notes/note2.jpg" alt="Note 2" class="note-image" />
-
+    <img src="/images/notes/workinprogress.png" alt="Note 2" class="note-image" />
     <div class="speechbubble-image-wrapper">
       <p class="speechbubble-text">Work in progress</p>
+    </div>
+  </div>
+
+   <div class="note-row">
+    <img src="/images/notes/quote.jpg" alt="Note 3" class="note-image" />
+    <div class="speechbubble-image-wrapper">
+      <p class="speechbubble-text">Interesting quote</p>
     </div>
   </div>
 </section>
@@ -54,6 +60,7 @@ import Footer from '../layouts/Footer.astro';
 }
 
 .highlight-line {
+  color: #FBD21A;
     background-color: white;
     display: inline-block;
     padding: 0.2rem 0.5rem;
@@ -118,16 +125,18 @@ import Footer from '../layouts/Footer.astro';
   }
 .note-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 4rem;
+    margin-bottom: 6rem;
+    margin-top: 2rem;
   }
 
   .note-image {
     width: 300px;
     height: auto;
     border-radius: 2rem;
+    border:#FBD21A solid 13px;
   }
   .speech-bubble {
     position: relative;
@@ -140,7 +149,7 @@ import Footer from '../layouts/Footer.astro';
     color: #fbd21a;
   }
 
-  .speech-bubble::after {
+  .speech-bubble:after {
     content: '';
     position: absolute;
     right: -20px;
