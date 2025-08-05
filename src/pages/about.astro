@@ -1,9 +1,10 @@
 ---
 import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
+import Footer from '../layouts/Footer.astro';
 ---
 <FixedSidebarLayout title="About">
-  <div class="about-page">
-
+  <div class="yellow-section">
+  <div class="about-page-wrapper">
     <section class="intro-section">
       <h1 class="highlight-line">Namaste! I’m Amruta Bhatt</h1>
       <p class="highlight-line subtext">based, in Vadodara</p>
@@ -21,18 +22,28 @@ import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
         click here
         <span class="cta-subtext">to know more about me</span>
       </a>
-
-       <section class="notes-section">
+    </div>
+      <section class="notes-section">
     <div class="note-row">
       <img src="/images/notes/note1.png" alt="Note 1" class="note-image" />
       <div class="speech-bubble">
         <p>Notes I have been taking</p>
       </div>
     </div>
+  </section>
+  <div style="background-color: white">
+   <Footer />
+   </div>
   </FixedSidebarLayout>
 
 
   <style>
+    .about-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .highlight-line {
     background-color: white;
     display: inline-block;
@@ -88,6 +99,13 @@ import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
     font-weight: 400;
     margin-top: 0.25rem;
     color: #444;
+  }
+   .notes-section {
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   </style>

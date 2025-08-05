@@ -1,0 +1,54 @@
+---
+
+---
+<footer class="footer">
+  <a href="/" class="door-link">
+    <img
+      src="/images/door/yellowdoorclose.png"
+      alt="Closed Door"
+      class="door-image door-closed"
+    />
+    <img
+      src="/images/door/yellowdooropen.png"
+      alt="Open Door"
+      class="door-image door-open"
+    />
+  </a>
+</footer>
+<style>
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .door-link {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .door-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .door-open {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .door-link:hover .door-open {
+    opacity: 1;
+  }
+
+  .door-link:hover .door-closed {
+    opacity: 0;
+  }
+</style>

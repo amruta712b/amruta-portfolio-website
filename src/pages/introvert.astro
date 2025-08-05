@@ -1,5 +1,6 @@
 ---
 import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
+import YellowBgFooter from '../layouts/YellowBgFooter.astro';
 import "../styles/global.css";
 ---
 <FixedSidebarLayout title="About">
@@ -9,10 +10,11 @@ import "../styles/global.css";
       <p class="sub-text">I’m an introvert</p>
     </div>
   </section>
+  <YellowBgFooter />
 </FixedSidebarLayout>
 <style>
   .about-content {
-  height: 100vh;
+  min-height: 30vh;
   padding: 100px 40px;
 }
 .text-box {
