@@ -24,13 +24,22 @@ import Footer from '../layouts/Footer.astro';
       </a>
     </div>
       <section class="notes-section">
-    <div class="note-row">
-      <img src="/images/notes/note1.png" alt="Note 1" class="note-image" />
-      <div class="speech-bubble">
-        <p>Notes I have been taking</p>
-      </div>
+  <div class="note-row">
+    <img src="/images/notes/note1.jpg" alt="Note 1" class="note-image" />
+
+    <div class="speechbubble-image-wrapper">
+      <p class="speechbubble-text">Notes I have been taking</p>
     </div>
-  </section>
+  </div>
+
+  <div class="note-row">
+    <img src="/images/notes/note2.jpg" alt="Note 2" class="note-image" />
+
+    <div class="speechbubble-image-wrapper">
+      <p class="speechbubble-text">Work in progress</p>
+    </div>
+  </div>
+</section>
   <div style="background-color: white">
    <Footer />
    </div>
@@ -107,5 +116,57 @@ import Footer from '../layouts/Footer.astro';
     flex-direction: column;
     align-items: center;
   }
+.note-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 
+  .note-image {
+    width: 300px;
+    height: auto;
+    border-radius: 2rem;
+  }
+  .speech-bubble {
+    position: relative;
+    background: white;
+    border: 1px solid #999;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    max-width: 250px;
+    font-weight: bold;
+    color: #fbd21a;
+  }
+
+  .speech-bubble::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 10px solid transparent;
+    border-left-color: white;
+  }
+.speechbubble-image-wrapper {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  background-image: url('/images/speechbubble/speechbubble.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+.speechbubble-text {
+  font-weight: bold;
+  color: #FBD21A;
+  font-size: 1rem;
+  z-index: 1;
+}
   </style>
