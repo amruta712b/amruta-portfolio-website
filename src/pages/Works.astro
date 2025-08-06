@@ -1,0 +1,92 @@
+---
+import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
+import YellowBgFooter from '../layouts/YellowBgFooter.astro';
+import "../styles/global.css";
+---
+<FixedSidebarLayout title="Work">
+   <main class="work-page">
+    <section class="work-grid">
+      <div class="work-item">
+        <img src="/images/works/illustration1.png" alt="Illustration" />
+        <div class="overlay">Illustration</div>
+      </div>
+      <div class="work-item">
+        <img src="/images/works/kids.png" alt="Kids" />
+        <div class="overlay">KIDS</div>
+      </div>
+      <div class="work-item">
+        <img src="/images/works/mycity.png" alt="My City" />
+        <div class="overlay">My City</div>
+      </div>
+       <div class="work-item">
+        <img src="/images/works/graphics.png" alt="Graphics" />
+        <div class="overlay">Graphics</div>
+      </div>
+      <div class="work-item">
+        <img src="/images/works/userexperience.png" alt="User Experience" />
+        <div class="overlay">User Experience</div>
+      </div>
+      <div class="work-item">
+        <img src="/images/works/architecture.jpg" alt="Architecture" />
+        <div class="overlay">Architecture</div>
+      </div>
+
+      </section>
+      <YellowBgFooter />
+      </FixedSidebarLayout>
+
+<style>
+  .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem 2rem;
+      justify-items: center;
+    }
+    .work-item {
+      font-family: 'Lilita One', cursive;
+      position: relative;
+      width: 200px;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 0.5rem; /*box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);*/
+
+      transition: transform 0.3s;
+    }
+    .work-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .work-item:hover img {
+      transform: scale(1.05);
+    }
+    .overlay {. /*font-family: 'Source Sans 3', sans-serif;*/
+  font-family: 'Lilita One', cursive;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(248, 210, 39, 0.554);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-item:hover .overlay {
+  opacity: 1;
+}
+
+.work-item:hover img {
+  opacity: 0.4;
+}
+</style>
+</FixedSidebarLayout>
