@@ -8,17 +8,9 @@ import "../styles/global.css";
     <section class="illustration-white-background">
     <h1 class="title">Illustrations</h1>
     <div class="scroll-indicator">
-  <img
-    src="/images/envelopeclose.png"
-    alt="Scroll Down"
-    class="scroll-image"
-  />
-  <img
-    src="/images/envelopeopen.png"
-    alt="Scroll Down Open"
-    class="scroll-image hover-image"
-  />
-</div>
+     <img src="/images/envelopeclose.png" alt="Scroll Down" class="envelope envelope-close" />
+     <img src="/images/envelopeopen.png" alt="Scroll Down Open" class="envelope envelope-open" />
+    </div>
     </section>
     <div class="grid-wrapper">
 
@@ -83,7 +75,7 @@ import "../styles/global.css";
   justify-content: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 97vh;
   background-color: white;
 }
 
@@ -139,48 +131,48 @@ grid-column: span 2;
 grid-row: span 2;
 }
 .scroll-indicator {
+  bottom: 20px;    /* distance from bottom */
+  left: 50%; 
   justify-content: center;
   position: absolute;
-  bottom: 2rem;
-  left: 55%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
+  width: 150px; /* Set the width of your envelope */
+  height: 150px;
 }
 
-.scroll-image {
+.envelope {
+   bottom: 4 rem;
+  justify-content: center;
   position: absolute;
-  width: 150%;
-  height: auto;
-  animation: wiggle 1.5s infinite;
-  transition: opacity 0.3s ease;
-}
-
-.hover-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   opacity: 0;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
-.scroll-indicator:hover .hover-image {
-  opacity: 1;
+.envelope-close {
+  animation-name: showClose;
 }
 
-.scroll-indicator:hover .scroll-image:not(.hover-image) {
-  opacity: 0;
+.envelope-open {
+  animation-name: showOpen;
 }
 
-@keyframes wiggle {
-  0%, 100% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  25% {
-    transform: translateX(-50%) rotate(3deg);
-  }
-  50% {
-    transform: translateX(-50%) rotate(-3deg);
-  }
-  75% {
-    transform: translateX(-50%) rotate(2deg);
-  }
+@keyframes showClose {
+  0%   { opacity: 1; }
+  50%  { opacity: 1; }
+  51%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes showOpen {
+  0%   { opacity: 0; }
+  50%  { opacity: 0; }
+  51%  { opacity: 1; }
+  100% { opacity: 1; }
 }
 </style>
