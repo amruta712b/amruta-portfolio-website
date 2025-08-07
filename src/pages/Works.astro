@@ -20,7 +20,7 @@ import "../styles/global.css";
       </div>
       </a>
 
-      <a href="/works/mycity" class="work-item item3">
+      <a href="/works/mycity" class="work-item item3 ">
 
       <div class="work-item">
         <img src="/images/works/mycity.png" alt="My City" />
@@ -28,7 +28,7 @@ import "../styles/global.css";
       </div>
       </a>
 
-      <a href="/works/graphics" class="work-item item4">
+      <a href="/works/graphics" class="work-item item4 ">
        <div class="work-item">
         <img src="/images/works/graphics.png" alt="Graphics" />
         <div class="overlay">Graphics</div>
@@ -55,11 +55,13 @@ import "../styles/global.css";
 
 <style>
   .work-grid {
-    padding-top: 40px;
+    padding-top: 3rem;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(6, 1fr);
       gap: 4rem 2rem;
       justify-items: center;
+      position: relative;
     }
     .work-item {
       font-family: 'Lilita One', cursive;
@@ -68,7 +70,6 @@ import "../styles/global.css";
       height: 280px;
       overflow: hidden;
       border-radius: 0.5rem; /*box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);*/
-
       transition: transform 0.3s;
     }
     .work-item img {
@@ -78,9 +79,28 @@ import "../styles/global.css";
       display: block;
       transition: transform 0.3s ease;
     }
+    .item1{
+       grid-area: 1 / 1 / 2 / 2;
+    }
+    .item2{
+      grid-area: 2 / 2 / 3 / 3;
+    }
+    .item3{
+      grid-area: 3 / 1 / 4 / 2;
+    }
+    .item4{
+      grid-area: 4 / 2 / 5 / 3;
+    }
+    .item5{
+      grid-area: 5 / 1 / 6 / 2;
+    }
+    .item6{
+    grid-area:  6 / 2 / 7 / 3;
+    }
     .work-item:hover img {
       transform: scale(1.05);
     }
+
     .overlay {. /*font-family: 'Source Sans 3', sans-serif;*/
   font-family: 'Lilita One', cursive;
   position: absolute;
