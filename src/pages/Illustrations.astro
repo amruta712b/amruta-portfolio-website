@@ -7,6 +7,18 @@ import "../styles/global.css";
   <main class="illustration-page">
     <section class="illustration-white-background">
     <h1 class="title">Illustrations</h1>
+    <div class="scroll-indicator">
+  <img
+    src="/images/envelopeclose.png"
+    alt="Scroll Down"
+    class="scroll-image"
+  />
+  <img
+    src="/images/envelopeopen.png"
+    alt="Scroll Down Open"
+    class="scroll-image hover-image"
+  />
+</div>
     </section>
     <div class="grid-wrapper">
 
@@ -63,8 +75,8 @@ import "../styles/global.css";
       <a href="/illustrations/17" class="grid-item">
         <img src="/images/works/illustrations/varnifirefly.JPG" alt="Illustration 17" />
       </a>
-<YellowBgFooter />
 </FixedSidebarLayout>
+<YellowBgFooter />
 
 <style>
 .illustration-white-background{
@@ -125,5 +137,50 @@ grid-column: span 2;
 .wide-tall-medium{
 grid-column: span 2;
 grid-row: span 2;
+}
+.scroll-indicator {
+  justify-content: center;
+  position: absolute;
+  bottom: 2rem;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.scroll-image {
+  position: absolute;
+  width: 150%;
+  height: auto;
+  animation: wiggle 1.5s infinite;
+  transition: opacity 0.3s ease;
+}
+
+.hover-image {
+  opacity: 0;
+}
+
+.scroll-indicator:hover .hover-image {
+  opacity: 1;
+}
+
+.scroll-indicator:hover .scroll-image:not(.hover-image) {
+  opacity: 0;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-50%) rotate(3deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-3deg);
+  }
+  75% {
+    transform: translateX(-50%) rotate(2deg);
+  }
 }
 </style>
