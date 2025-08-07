@@ -1,0 +1,129 @@
+---
+import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
+import YellowBgFooter from '../layouts/YellowBgFooter.astro';
+import "../styles/global.css";
+---
+<FixedSidebarLayout title="Illustrations">
+  <main class="illustration-page">
+    <section class="illustration-white-background">
+    <h1 class="title">Illustrations</h1>
+    </section>
+    <div class="grid-wrapper">
+
+      <a href="/illustrations/1" class="grid-item tall-large">
+        <img src="/images/works/illustrations/nilkanthvarni.JPG" alt="Illustration 1" />
+      </a>
+      <a href="/illustrations/2" class="grid-item wide-medium ">
+        <img src="/images/works/illustrations/msmvarni.JPG" alt="Illustration 2" />
+      </a>
+      <a href="/illustrations/3" class="grid-item wide-medium">
+        <img src="/images/works/illustrations/dog1.JPG" alt="Illustration 3" />
+      </a>
+      <a href="/illustrations/4" class="grid-item wide-large">
+        <img src="/images/works/illustrations/csr.JPG" alt="Illustration 4" />
+      </a>
+      <a href="/illustrations/5" class="grid-item wide-medium">
+        <img src="/images/works/illustrations/varnielephant.JPG" alt="Illustration 5" />
+      </a>
+      <a href="/illustrations/6" class="grid-item wide-tall-medium">
+        <img src="/images/works/illustrations/weddingillustration.JPG" alt="Illustration 6" />
+      </a>
+      <a href="/illustrations/7" class="grid-item tall-medium">
+        <img src="/images/works/illustrations/psm100.JPG" alt="Illustration 7" />
+      </a>
+      <a href="/illustrations/8" class="grid-item">
+        <img src="/images/works/illustrations/varnisarovar.JPG" alt="Illustration 8" />
+      </a>
+      <a href="/illustrations/9" class="grid-item wide-tall-medium">
+        <img src="/images/works/illustrations/raghurajpur.JPG" alt="Illustration 9" />
+      </a>
+       <a href="/illustrations/10" class="grid-item">
+        <img src="/images/works/illustrations/varniunderwater.JPG" alt="Illustration 10" />
+      </a>
+       </a>
+       <a href="/illustrations/11" class="grid-item">
+        <img src="/images/works/illustrations/varniforest.JPG" alt="Illustration 11" />
+      </a>
+       </a>
+       <a href="/illustrations/12" class="grid-item">
+        <img src="/images/works/illustrations/varnideer.JPG" alt="Illustration 12" />
+      </a>
+      <a href="/illustrations/13" class="grid-item">
+        <img src="/images/works/illustrations/raja13.JPG" alt="Illustration 13" />
+      </a>
+      <a href="/illustrations/14" class="grid-item">
+        <img src="/images/works/illustrations/foh.JPG" alt="Illustration 14" />
+      </a>
+      <a href="/illustrations/15" class="grid-item">
+        <img src="/images/works/illustrations/akdm.JPG" alt="Illustration 15" />
+      </a>
+      <a href="/illustrations/15" class="grid-item">
+        <img src="/images/works/illustrations/akdm.JPG" alt="Illustration 15" />
+      </a>
+      <a href="/illustrations/15" class="grid-item">
+        <img src="/images/works/illustrations/akdm.JPG" alt="Illustration 15" />
+      </a>
+<YellowBgFooter />
+</FixedSidebarLayout>
+
+<style>
+.illustration-white-background{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.title{
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 2rem;
+  color: #FBD21A;
+  font-family: 'Lilita One', cursive;
+}
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: #f8d227;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+.grid-item {
+  background: white;
+  overflow: hidden;
+  display: block;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.tall-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.wide-medium{
+grid-column: span 2;
+}
+
+.wide-large{
+ grid-column: span 4;
+}
+
+.wide-tall-medium{
+grid-column: span 2;
+grid-row: span 2;
+}
+</style>
