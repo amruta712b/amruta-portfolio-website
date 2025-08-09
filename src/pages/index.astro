@@ -1,43 +1,71 @@
 ---
-// index.astro
 import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
 import "../styles/global.css";
-
 ---
 
 <FixedSidebarLayout title="Home">
   <div class="homepage">
-	<h1 class="namaste">Namaste</h1>
-  </div>
-	 <div class="window-container">
+    <h1 class="namaste">Namaste</h1>
 
-    <a href="#" class="window-link" style="top: 25%; left: 30%; width: 100px">
-      <img src="/images/homepage/windows/window2.png" alt="Window" class="window-img" />
-    </a>
-    <a href="#" class="window-link" style="top: 50%; left: 70%; width: 140px">
-      <img src="/images/homepage/windows/window3.png" alt="Window" class="window-img" />
-    </a>
-    <a href="#" class="window-link" style="top: 70%; left: 80%; width: 90px">
-      <img src="/images/homepage/windows/window4.png" alt="Window" class="window-img" />
-    </a>
-		<a href="#" class="window-link" style="top: 10%; left: 15%; width: 150px;">
-      <img src="/images/homepage/windows/window1.png" alt="Window" class="window-img" />
-    </a>
-    <a href="#" class="window-link" style="top: 60%; left: 20%; width: 130px;">
-      <img src="/images/homepage/windows/window2.png" alt="Window" class="window-img" />
-    </a>
-    <a href="#" class="window-link" style="top: 5%; left: 80%; width: 65px;">
-      <img src="/images/homepage/windows/window3.png" alt="Window" class="window-img" />
-    </a>
+    <!-- CHANGED: removed inline top/left styles, will use grid-area -->
+    <div class="window-container">
+      <a href="#" class="window-link item1">
+        <img src="/images/homepage/windows/window2.png" alt="Window" class="window-img" />
+      </a>
+      <a href="#" class="window-link item2">
+        <img src="/images/homepage/windows/window3.png" alt="Window" class="window-img" />
+      </a>
+      <a href="#" class="window-link item3">
+        <img src="/images/homepage/windows/window4.png" alt="Window" class="window-img" />
+      </a>
+      <a href="#" class="window-link item4">
+        <img src="/images/homepage/windows/window1.png" alt="Window" class="window-img" />
+      </a>
+      <a href="#" class="window-link item5">
+        <img src="/images/homepage/windows/window2.png" alt="Window" class="window-img" />
+      </a>
+      <a href="#" class="window-link item6">
+        <img src="/images/homepage/windows/window3.png" alt="Window" class="window-img" />
+      </a>
+    </div>
   </div>
 </FixedSidebarLayout>
 
 <style>
+.homepage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #FBD21A;
+  overflow: hidden;
+
+  /* NEW: make homepage use grid for layout */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.namaste {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 90px;
+  padding: 10px;
+  font-family: 'Lilita One', cursive;
+  color: #fff7b3c6;
+  z-index: 10;
+}
+
+.window-container {
+  /* NEW: container fills grid */
+  display: contents; /* allows items to place directly in homepage grid */
+}
 
 .window-link {
-  position: absolute;
   transition: transform 0.3s ease;
   z-index: 2;
+  justify-self: center;
+  align-self: center;
 }
 .window-link:hover {
   transform: scale(1.2);
@@ -45,25 +73,16 @@ import "../styles/global.css";
 }
 
 .window-img {
-  width: 100%; /* width is controlled by the parent <a> */
+  width: 100%;
   height: auto;
   display: block;
 }
-	.homepage {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-color: #FBD21A;
-  overflow: hidden;
-}
-.namaste {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 90px;
-	padding: 10px;
-  font-family: 'Lilita One', cursive;
-  color: #fff7b3c6;
-  z-index: 10;
-}
+
+/* NEW: Assign grid areas and sizes */
+.item1 { grid-column: 4 / span 2; grid-row: 3 / span 2; width: 100px; }
+.item2 { grid-column: 9 / span 2; grid-row: 6 / span 2; width: 140px; }
+.item3 { grid-column: 11 / span 2; grid-row: 9 / span 2; width: 90px; }
+.item4 { grid-column: 2 / span 3; grid-row: 2 / span 2; width: 150px; }
+.item5 { grid-column: 3 / span 3; grid-row: 8 / span 2; width: 130px; }
+.item6 { grid-column: 11 / span 1; grid-row: 1 / span 2; width: 65px; }
 </style>
