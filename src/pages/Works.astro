@@ -6,48 +6,73 @@ import "../styles/global.css";
 <FixedSidebarLayout title="Work">
    <main class="work-page">
     <section class="work-grid">
-      <a href="/Illustrations" class="work-item item1">
+      <div class="work-pair item1">
+      <a href="/Illustrations" class="work-item ">
       <div class="work-item">
         <img src="/images/works/illustration1.png" alt="Illustration" />
         <div class="overlay">Illustration</div>
       </div>
       </a>
-
-       <a href="/works/kids" class="work-item item2">
+      <div class="work-text">
+            <p>I speak in strokes,but hold no pen.My worlds live on paper,Our brains process visuals 60,000 times faster than text which is why I use illustration to say what words can’t.Every line and colour carries emotion, creating a connection long before a sentence can be read. To me, drawing is not decoration, it’s storytelling without translation.yet breathe without air.</p>
+          </div>
+          </div>
+<div class="work-pair item2">
+  <a href="/works/kids" class="work-item ">
       <div class="work-item">
         <img src="/images/works/kids.png" alt="Kids" />
         <div class="overlay">KIDS</div>
       </div>
       </a>
-
-      <a href="/works/mycity" class="work-item item3 ">
+      <div class="work-text">
+            <p>Children’s books with illustrations are proven to boost imagination, vocabulary, and emotional intelligence. Designing for young minds means thinking in bright shapes, playful proportions, and limitless possibilities. Every choice is a chance to make their world feel bigger, kinder, and more magical.</p>
+          </div>
+          </div>
+        <div class="work-pair item3">
+         <a href="/works/mycity" class="work-item  ">
 
       <div class="work-item">
         <img src="/images/works/mycity.png" alt="My City" />
         <div class="overlay">My City</div>
       </div>
       </a>
-
-      <a href="/works/graphics" class="work-item item4 ">
+      <div class="work-text">
+            <p>Every city has a visual rhythm — from the colours of its walls to the patterns in its markets.Vadodara speaks in the quiet details of its streets, the hum of its people, and the textures of its history.I capture those moments so the place can be felt, not just seen.</p>
+          </div>
+          </div>
+      <div class="work-pair item4">
+      <a href="/works/graphics" class="work-item  ">
        <div class="work-item">
         <img src="/images/works/graphics.png" alt="Graphics" />
         <div class="overlay">Graphics</div>
       </div>
       </a>
-
-      <a href="/works/userexperience" class="work-item item5">
-      <div class="work-item">
-        <img src="/images/works/userexperience.png" alt="User Experience" />
-        <div class="overlay">User Experience</div>
-      </div>
-      </a>
-
-      <a href="/works/architecture" class="work-item item6">
+      <div class="work-text">
+            <p>Good graphic design increases brand recognition by up to 80% — but numbers aren’t the whole story. Design is about shaping an identity that speaks even before words are read.It’s where clarity meets creativity, and where form carries meaning.</p>
+          </div>
+          </div>
+          <div class="work-pair item5">
+          <a href="/works/userexperience" class="work-item ">
+          <div class="work-item">
+          <img src="/images/works/userexperience.png" alt="User Experience" />
+         <div class="overlay">User Experience</div>
+         </div>
+          </a>
+          <div class="work-text">
+            <p>A one-second delay in load time can reduce user satisfaction by 16% — but great UX is about more than speed. It’s about designing invisible pathways that feel natural to follow. When it works well, people don’t notice the design — they just feel understood.</p>
+          </div>
+          </div>
+      <div class="work-pair item6">
+      <a href="/works/architecture" class="work-item ">
       <div class="work-item">
         <img src="/images/works/architecture.jpg" alt="Architecture" />
         <div class="overlay">Architecture</div>
       </div>
       </a>
+      <div class="work-text">
+            <p>Architecture shapes how we feel without us realising. From the openness of a courtyard to the quiet of a reading nook, design silently directs experience. Spaces are stories in three dimensions — and I believe every detail should be intentional.</p>
+          </div>
+          </div>
 
       </section>
       <YellowBgFooter />
@@ -66,12 +91,24 @@ import "../styles/global.css";
        max-width: 1000px;
     }
     .work-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       font-family: 'Lilita One', cursive;
       position: relative;
       overflow: hidden;
       border-radius: 0.5rem; /*box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);*/
       transition: transform 0.3s;
     }
+    .work-pair {
+     display: flex;
+     align-items: center;
+    gap: 2rem;
+     }
+.work-item {
+  flex: 0 0 300px;
+  position: relative;
+}
     .work-item img {
       width: 100%;
       height: auto;
@@ -79,6 +116,13 @@ import "../styles/global.css";
       display: block;
       transition: transform 0.3s ease;
     }
+    .work-text {
+  flex: 1;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 16px;
+  color: #555;
+  max-width: 250px;
+}
     .item1{
        grid-area: 1 / 1 / 2 / 2;
     }
