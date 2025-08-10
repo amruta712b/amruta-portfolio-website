@@ -6,6 +6,10 @@ import "../styles/global.css";
 <!doctype html>
 <html lang="en">
   <head>
+     <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180x180.png">
     <link
       href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Source+Sans+3&display=swap"
       rel="stylesheet"
@@ -44,6 +48,7 @@ import "../styles/global.css";
         overflow-y: auto;
         border-right: 1px solid rgba(255,255,255,0.3);
         transition: background 0.3s ease;
+
       }
 
       .main-content {
@@ -107,8 +112,11 @@ import "../styles/global.css";
       }
 
       .logo {
+         display: flex;
+         flex-direction: column;
+        align-items: center;
         width: 80px;
-        margin: 0 auto ;
+        margin: 0 0;
         display: block;
       }
       .socials {
