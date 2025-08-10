@@ -91,6 +91,7 @@ import "../styles/global.css";
        max-width: 1000px;
     }
     .work-item {
+       flex: 0 0 300px;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -101,14 +102,13 @@ import "../styles/global.css";
       transition: transform 0.3s;
     }
     .work-pair {
-     display: flex;
-     align-items: center;
-    gap: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      box-sizing: border-box;
+       width: 100%;
      }
-.work-item {
-  flex: 0 0 300px;
-  position: relative;
-}
+
     .work-item img {
       width: 100%;
       height: auto;
@@ -117,18 +117,23 @@ import "../styles/global.css";
       transition: transform 0.3s ease;
     }
     .work-text {
-  flex: 1;
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: 16px;
-  color: #555;
-  max-width: 250px;
+      grid-column: span 3 ;
+      flex: 1;
+     font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      color: black;
+
 }
     .item1{
        grid-area: 1 / 1 / 2 / 2;
+       width: 600px;
+  height: auto;
     }
     .item2{
-      grid-area: 2 / 2 / 3 / 3;
+      grid-area: 2 / 2 / 3 / 3 ;
       transform: translateY(-100px);
+       width: 500px;
+  height: auto;
     }
     .item3{
       grid-area: 3 / 1 / 4 / 2;
@@ -138,24 +143,21 @@ import "../styles/global.css";
     }
     .item4{
       grid-area: 4 / 2 / 5 / 3;
+      width: 550px;
+       height: auto;
 
     }
     .item5{
       grid-area: 5 / 1 / 6 / 2;
+       width: 300px;
+       height: auto;
     }
     .item6{
     grid-area:  6 / 2 / 7 / 3;
      width: 350px;
      height: auto;
     }
-.item1, .item4 {
-  width: 350px;  /* ✨ bigger */
-  height: auto;
-}
-.item2, .item5 {
-  width: 300px;  /* ✨ smaller */
-  height: auto;
-}
+
     .work-item:hover img {
       transform: scale(1.05);
     }
