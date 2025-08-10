@@ -1,14 +1,71 @@
 ---
+import FixedSidebarLayout from '../../layouts/FixedSidebarLayout.astro';
 import YellowBgFooter from '../../layouts/YellowBgFooter.astro';
-import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
-import "../styles/global.css";
+import '../../styles/global.css';
 ---
 <FixedSidebarLayout title="Nilkanthvarni">
-
-<YellowBgFooter />
+<main class="artwork-page">
+    <div class="artwork-image">
+      <img src="/images/works/illustrations/nilkanthvarni.JPG" alt="Nilkanthvarni Murti" />
+    </div>
+    <div class="artwork-text">
+      <h1>
+        <span class="highlight">Nilkanthvarni and his austerities</span>
+      </h1>
+      <h2 class="year">2022</h2>
+      <p>
+     Neelkanth left home with only a few possessions: a loin cloth, a small scripture, a murti, and a begging bowl. He traveled with only what was necessary, renounced his family and other worldly possessions, and continued his lifelong journey of bringing people closer to God. While traveling through the Himalayas, Neelkanth endured the severe climate of the coldest months of the year, a time when even the residents of the Himalayas migrate to warmer temperatures.Despite the physical challenges, Neelkanth climbed a height of 12,500 feet to arrive at the revered mandir dedicated to Vishnu, Muktinath.Here, He spent four months engaged in penance despite harsh temperatures, freezing rainfall, and piercing winds. 
+      </p>
+      <a href="https://www.baps.org/About-BAPS/TheFounder%e2%80%93BhagwanSwaminarayan/Life/TeenageYogi-NeelkanthVarni.aspx" class="more-link">
+        Click here to know more about Nilkanthvarni
+      </a>
+    </div>
+  </main>
+  <YellowBgFooter />
 </FixedSidebarLayout>
 
-
 <style>
+  .artwork-page{
+   display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fbd21a;
+  min-height: 100vh;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  }
+  .artwork-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.artwork-text{
+  color: white;
+}
+.highlight {
+  background-color: white;
+  color: #fbd21a;
+  font-weight: bold;
+  padding: 0.2rem 0.4rem;
+  font-family: 'Lilita One', cursive;
+}
+.year {
+  font-weight: bold;
+  font-family: 'Lilita One', cursive;
+  margin: 0.5rem 0 1rem;
+}
 
+.more-link {
+  display: inline-block;
+  background-color: white;
+  color: #fbd21a;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.more-link:hover {
+  background-color: #fff7b3;
+}
 </style>
