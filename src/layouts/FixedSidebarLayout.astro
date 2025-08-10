@@ -40,12 +40,20 @@ import "../styles/global.css";
         padding: 20px;
         overflow-y: auto;
         border-right: 1px solid #e9ecef;
+        padding: 20px;
+        overflow-y: auto;
+        border-right: 1px solid rgba(255,255,255,0.3);
+        transition: background 0.3s ease;
       }
 
       .main-content {
         margin-left: 100px; /* padding 40px */
         flex: 1;
         background: #fbd21a;
+         margin-left: 100px;
+        opacity: 0; /* fade-in animation */
+        transform: translateY(10px);
+        animation: fadeIn 0.6s ease forwards;
       }
       .menu {
         padding-top: 40px;
@@ -122,6 +130,63 @@ import "../styles/global.css";
       a {
         text-decoration: none;
       }
+
+      .sidebar:hover {
+        background: rgba(255, 255, 255, 0.75);
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+       .nav-links li {
+        opacity: 0;
+        transform: translateX(-10px);
+        animation: slideIn 0.5s ease forwards;
+      }
+      .nav-links li:nth-child(1) { animation-delay: 0.1s; }
+      .nav-links li:nth-child(2) { animation-delay: 0.2s; }
+      .nav-links li:nth-child(3) { animation-delay: 0.3s; }
+      .nav-links li:nth-child(4) { animation-delay: 0.4s; }
+      .nav-links li:nth-child(5) { animation-delay: 0.5s; }
+
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .menu-link::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 3px;
+        bottom: -4px;
+        left: 0;
+        background-color: #fbd21a;
+        transition: width 0.3s ease;
+      }
+      .menu-link:hover::after {
+        width: 100%;
+      }
+        .menu-link:hover {
+        transform: scale(1.05);
+        color: #fbd21a;
+      }
+
+      /* Logo improvements */
+      .logo {
+        width: 130%;
+        margin: 0.1rem auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      .logo:hover {
+        transform: rotate(-5deg) scale(1.05); /* playful wobble */
+      }
+
     </style>
   </head>
   <body>
@@ -139,6 +204,7 @@ import "../styles/global.css";
               <li><a href="/cv" class="menu-link">CV</a></li>
               <li><a href="/Works" class="menu-link">Works</a></li>
               <li><a href="/play" class="menu-link">Play</a></li>
+              <li><a href="/contact" class="menu-link">Contact</a></li>
             </ul>
           </nav>
         </div>
