@@ -14,7 +14,7 @@ import "../styles/global.css";
       </div>
       </a>
       <div class="work-text">
-            <p>I speak in strokes,but hold no pen.My worlds live on paper,Our brains process visuals 60,000 times faster than text which is why I use illustration to say what words can’t.Every line and colour carries emotion, creating a connection long before a sentence can be read. To me, drawing is not decoration, it’s storytelling without translation.yet breathe without air.</p>
+            <p>Our brains process visuals 60,000 times faster than text which is why I use illustration to say what words can’t.Every line and colour carries <span class="highlight"> emotion</span>, creating a <span class="highlight">connection</span> long before a sentence can be read. To me, drawing is not decoration, it’s <span class="highlight">storytelling </span>without translation.yet breathe without air.</p>
           </div>
           </div>
 <div class="work-pair item2">
@@ -25,7 +25,7 @@ import "../styles/global.css";
       </div>
       </a>
       <div class="work-text">
-            <p>Children’s books with illustrations are proven to boost imagination, vocabulary, and emotional intelligence. Designing for young minds means thinking in bright shapes, playful proportions, and limitless possibilities. Every choice is a chance to make their world feel bigger, kinder, and more magical.</p>
+            <p>Children’s books with illustrations are proven to boost <span class="highlight">imagination</span>, vocabulary, and emotional intelligence. Designing for young minds means thinking in bright shapes, playful proportions, and limitless possibilities. Every choice is a chance to make their world feel bigger, kinder, and more <span class="highlight">magical</span>.</p>
           </div>
           </div>
         <div class="work-pair item3">
@@ -37,7 +37,7 @@ import "../styles/global.css";
       </div>
       </a>
       <div class="work-text">
-            <p>Every city has a visual rhythm — from the colours of its walls to the patterns in its markets.Vadodara speaks in the quiet details of its streets, the hum of its people, and the textures of its history.I capture those moments so the place can be felt, not just seen.</p>
+            <p>Every city has a visual rhythm — from the colours of its walls to the <span class="highlight">patterns</span> in its markets.Vadodara speaks in the quiet details of its streets, the hum of its <span class="highlight">people</span>, and the textures of its <span class="highlight">history</span>.I capture those moments so the place can be felt, not just seen.</p>
           </div>
           </div>
       <div class="work-pair item4">
@@ -48,7 +48,7 @@ import "../styles/global.css";
       </div>
       </a>
       <div class="work-text">
-            <p>Good graphic design increases brand recognition by up to 80% — but numbers aren’t the whole story. Design is about shaping an identity that speaks even before words are read.It’s where clarity meets creativity, and where form carries meaning.</p>
+            <p>Good graphic design increases brand recognition by up to 80% — but numbers aren’t the whole story. Design is about shaping an <span class="highlight">identity </span> that speaks even before words are read.It’s where clarity meets creativity, and where form carries <span class="highlight">meaning</span>.</p>
           </div>
           </div>
           <div class="work-pair item5">
@@ -59,7 +59,7 @@ import "../styles/global.css";
          </div>
           </a>
           <div class="work-text">
-            <p>A one-second delay in load time can reduce user satisfaction by 16% — but great UX is about more than speed. It’s about designing invisible pathways that feel natural to follow. When it works well, people don’t notice the design — they just feel understood.</p>
+            <p>A one-second delay in load time can reduce user satisfaction by 16% — but great UX is about more than speed. It’s about designing<span class="highlight"> invisible pathways </span> that feel natural to follow. When it works well, people don’t <span class="highlight"> notice the design </span>— they just feel understood .</p>
           </div>
           </div>
       <div class="work-pair item6">
@@ -70,7 +70,7 @@ import "../styles/global.css";
       </div>
       </a>
       <div class="work-text">
-            <p>Architecture shapes how we feel without us realising. From the openness of a courtyard to the quiet of a reading nook, design silently directs experience. Spaces are stories in three dimensions — and I believe every detail should be intentional.</p>
+            <p>Architecture shapes how we feel without us realising. From the openness of a courtyard to the quiet of a reading nook, design silently directs <span class="highlight"> experience</span>. Spaces are stories in three dimensions — and I believe every detail should be <span class="highlight">intentional</span>.</p>
           </div>
           </div>
 
@@ -80,6 +80,7 @@ import "../styles/global.css";
 </FixedSidebarLayout>
 <style>
   .work-grid {
+    padding-left: 20px;
       padding-top: 3rem;
       display: grid;
       grid-template-columns: repeat(5, auto);
@@ -88,7 +89,7 @@ import "../styles/global.css";
       margin: 0 auto;
       justify-items: center;
       position: relative;
-       max-width: 1000px;
+       max-width: 1500px;
     }
     .work-item {
        flex: 0 0 300px;
@@ -126,18 +127,18 @@ import "../styles/global.css";
 }
     .item1{
        grid-area: 1 / 1 / 2 / 2;
-       width: 600px;
+       width: 700px;
   height: auto;
     }
     .item2{
       grid-area: 2 / 2 / 3 / 3 ;
       transform: translateY(-100px);
-       width: 500px;
+       width: 600px;
   height: auto;
     }
     .item3{
       grid-area: 3 / 1 / 4 / 2;
-       width: 250px;
+       width: 650px;
         height: auto;
         transform: translateY(-100px);
     }
@@ -149,15 +150,14 @@ import "../styles/global.css";
     }
     .item5{
       grid-area: 5 / 1 / 6 / 2;
-       width: 300px;
+       width: 700px;
        height: auto;
     }
     .item6{
     grid-area:  6 / 2 / 7 / 3;
-     width: 350px;
+     width: 650px;
      height: auto;
     }
-
     .work-item:hover img {
       transform: scale(1.05);
     }
@@ -180,7 +180,15 @@ import "../styles/global.css";
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
+.highlight {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fbd21a;
+  background-color: white;
+  padding: 0 4px;
+  border-radius: 5px ;
+  display: inline-block;
+}
 .work-item:hover .overlay {
   opacity: 1;
 }
