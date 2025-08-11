@@ -10,22 +10,35 @@ import "../styles/global.css";
     <!-- CHANGED: removed inline top/left styles, will use grid-area -->
     <div class="window-container">
       <a href="#" class="window-link item1">
-        <img src="/images/homepage/windows/window2.png" alt="Window" class="window-img" />
+        <img src="/images/homepage/windows/window2.png" alt="Window close" class="window-img closed" />
+        <img src="/images/homepage/windows/window2open.png" alt="Window open" class="window-img open" />
+        <span class="caption">Mind the cat, he bites sometimes.</span>
       </a>
       <a href="#" class="window-link item2">
-        <img src="/images/homepage/windows/window3.png" alt="Window" class="window-img" />
+        <img src="/images/homepage/windows/window3.png" alt="Window close" class="window-img closed" />
+        <img src="/images/homepage/windows/window3open.png" alt="Window open" class="window-img open" />
+        <span class="caption">Psst… it’s a secret garden.</span>
       </a>
       <a href="#" class="window-link item3">
-        <img src="/images/homepage/windows/window4.png" alt="Window" class="window-img" />
+        <img src="/images/homepage/windows/window4.png" alt="Window close" class="window-img closed" />
+        <img src="/images/homepage/windows/window4open.png" alt="Window open" class="window-img open" />
+        <span class="caption">Your tea is almost ready.</span>
+
       </a>
       <a href="#" class="window-link item4">
-        <img src="/images/homepage/windows/window1.png" alt="Window" class="window-img" />
+        <img src="/images/homepage/windows/window1.png" alt="Window close" class="window-img closed" />
+        <img src="/images/homepage/windows/window1open.PNG" alt="Window open" class="window-img open" />
+        <span class="caption">Oh hi… I’ve been expecting you.</span>
       </a>
       <a href="#" class="window-link item5">
-        <img src="/images/homepage/windows/window2.png" alt="Window" class="window-img" />
+        <img src="/images/homepage/windows/window2.png" alt="Window close" class="window-img closed" />
+        <img src="/images/homepage/windows/window2open.png" alt="Window open" class="window-img open" />
+        <span class="caption">Mind the cat, he bites sometimes.</span>
       </a>
       <a href="#" class="window-link item6">
-        <img src="/images/homepage/windows/window3.png" alt="Window" class="window-img" />
+        <img src="/images/homepage/windows/window3.png" alt="Window close" class="window-img closed" />
+        <img src="/images/homepage/windows/window3open.png" alt="Window open" class="window-img open" />
+        <span class="caption">Psst… it’s a secret garden.</span>
       </a>
     </div>
   </div>
@@ -79,10 +92,76 @@ import "../styles/global.css";
 }
 
 /* NEW: Assign grid areas and sizes */
-.item1 { grid-column: 4 / span 2; grid-row: 3 / span 2; width: 100px; }
+.item1 { grid-column: 4 / span 2; grid-row: 3 / span 2; width: 150px; }
 .item2 { grid-column: 9 / span 2; grid-row: 6 / span 2; width: 140px; }
-.item3 { grid-column: 11 / span 2; grid-row: 9 / span 2; width: 90px; }
+.item3 { grid-column: 11 / span 2; grid-row: 9 / span 2; width: 150px; }
 .item4 { grid-column: 2 / span 3; grid-row: 2 / span 2; width: 150px; }
 .item5 { grid-column: 3 / span 3; grid-row: 8 / span 2; width: 130px; }
-.item6 { grid-column: 11 / span 1; grid-row: 1 / span 2; width: 65px; }
+.item6 { grid-column: 11 / span 1; grid-row: 1 / span 2; width: 95px; }
+
+.window-link {
+  position: relative;
+  display: inline-block;
+  justify-self: center;
+  align-self: center;
+  transition: transform 0.3s ease;
+}
+
+.window-link:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.window-img.open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.window-img.closed {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.window-link:hover .window-img.closed {
+  opacity: 0;
+}
+.window-link:hover .window-img.open {
+  opacity: 1;
+}
+
+.caption {
+  position: absolute;
+  bottom: 110%; /* above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.caption::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.window-link:hover .caption {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
 </style>
