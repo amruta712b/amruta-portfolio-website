@@ -1,4 +1,5 @@
 ---
+const { isContactPage } = Astro.props;
 
 ---
 <footer class="footer">
@@ -14,6 +15,17 @@
       class="door-image door-open"
     />
   </a>
+  {isContactPage && (
+      <a href="mailto:your-email@example.com" class="mailbox-link" title="Email Me">
+        <img
+          src="/images/mailbox.png"
+          alt="Mailbox"
+          class="mailbox-image"
+        />
+      </a>
+    )}
+  </div>
+
 </footer>
 <style>
   .footer {
@@ -51,4 +63,20 @@
   .door-link:hover .door-closed {
     opacity: 0;
   }
+  .mailbox-link {
+    display: inline-block;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .mailbox-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .mailbox-link:hover .mailbox-image {
+    transform: scale(1.1);
+  }
+  
 </style>
