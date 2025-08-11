@@ -16,12 +16,8 @@ const { isContactPage } = Astro.props;
     />
   </a>
   {isContactPage && (
-      <a href="mailto:your-email@example.com" class="mailbox-link" title="Email Me">
-        <img
-          src="/images/mailbox.png"
-          alt="Mailbox"
-          class="mailbox-image"
-        />
+      <a href="mailto:ammsbbhatt@gmail.com" class="mailbox-link" title="Email Me">
+        <img src="/images/mailbox.png" alt="Mailbox" class="mailbox-image" />
       </a>
     )}
   </div>
@@ -33,6 +29,7 @@ const { isContactPage } = Astro.props;
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    align-items: flex-end;
   }
 
   .door-link {
@@ -63,10 +60,19 @@ const { isContactPage } = Astro.props;
   .door-link:hover .door-closed {
     opacity: 0;
   }
-  .mailbox-link {
-    display: inline-block;
+  mailbox {
+  position: fixed;
+  bottom: 0;
+  left: 50px; /* adjust horizontal placement */
+  z-index: 10; /* so it appears above background */
+}
+ .mailbox-link {
+    position: fixed; /* pins it relative to viewport */
+    bottom: 5px; /* distance from bottom edge */
+    left: 180px; /* distance from left edge (adjust so it's near the door) */
     width: 100px;
     cursor: pointer;
+    z-index: 100;
   }
 
   .mailbox-image {
@@ -78,5 +84,5 @@ const { isContactPage } = Astro.props;
   .mailbox-link:hover .mailbox-image {
     transform: scale(1.1);
   }
-  
+
 </style>

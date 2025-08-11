@@ -3,53 +3,84 @@ import FixedSidebarLayout from '../layouts/FixedSidebarLayout.astro';
 import "../styles/global.css";
 import Footer from '../layouts/Footer.astro';
 ---
+
 <FixedSidebarLayout title="Contact">
-
-<div class="contact-page">
-    <div class="contact-content">
-
-
-
-      <!-- Optional Text -->
-      <div class="contact-text">
-        <p>Step up to the door & drop me a mail!</p>
+  <div class="contact-container">
+    <!-- Illustration with speech bubble -->
+    <div class="illustration-wrapper">
+      <img src="/images/contact.png" alt="Contact Illustration" class="contact-illustration" />
+      <div class="speech-bubble">
+        Hello there! <br/> Let’s get in touch.
       </div>
     </div>
   </div>
 </FixedSidebarLayout>
+
 <Footer isContactPage={true} />
 
 <style>
-  .contact-page {
+  .contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     background-color: white;
-    min-height: 70vh; /* to fill most of the viewport */
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 2rem;
+  justify-content: space-between; /* pushes mailbox to bottom */
+  min-height: 100vh;
   }
 
-  .contact-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .contact-content img {
-    max-width: 150px;
-    height: auto;
+  .illustration-wrapper {
+    position: relative;
+    display: inline-block;
     cursor: pointer;
-    transition: transform 0.3s ease;
   }
 
-  .contact-content img:hover {
-    transform: scale(1.05);
+  .contact-illustration {
+    display: block;
+  height: 100vh;
+  object-fit: contain; /* or cover if you want full fill */
+  background: white;
+    max-width: 500px;
+    height: auto;
   }
 
-  .contact-text {
-    font-size: 1.2rem;
+  .speech-bubble {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%; /* center vertically */
+    left: 105%;
+    background: #fffbe6;
+    color: black;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #fbd21a;
     font-family: sans-serif;
-    color: #333;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 180px;
   }
+
+  /* Show bubble on hover */
+  .illustration-wrapper:hover .speech-bubble {
+    opacity: 1;
+    transform: translateX(200px);
+  }
+
+  /* Speech bubble arrow */
+  .speech-bubble::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #fffbe6 transparent transparent;
+  }
+  :global(.main-content) {
+    background: white;
+}
 </style>
