@@ -18,8 +18,19 @@ import Footer from '../layouts/Footer.astro';
          <p class="highlight-line subtext">describe me aptly</p>
        </section>
       </div>
-
-    </div>
+      <div class="scroll-indicator">
+        <img
+          src="/images-optimized/whiteenvelopeclose.png"
+          alt="Scroll Down"
+          class="envelope envelope-close"
+        />
+        <img
+          src="/images-optimized/whiteenvelopeopen.png"
+          alt="Scroll Down Open"
+          class="envelope envelope-open"
+        />
+      </div>
+</div>
 
       <section class="notes-section">
   <div class="note-row">
@@ -60,7 +71,7 @@ import Footer from '../layouts/Footer.astro';
        padding-left: 20px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 75vh;
 }
 
 .highlight-line {
@@ -183,4 +194,71 @@ position: fixed;
   font-size: 1rem;
   z-index: 1;
 }
+.scroll-indicator {
+  z-index: 10;
+    left: 50%;
+    bottom: 90%;
+    justify-content: center;
+    position: relative;
+    transform: translateX(-50%);
+    width: 150px; /* fixed small size */
+    height: 150px;
+  }
+  .scroll-image {
+    width: 150px; /* Set the width of your envelope */
+    height: 150px;
+  }
+
+  .envelope {
+    bottom: 4rem;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  .envelope-close {
+    animation-name: showClose;
+  }
+
+  .envelope-open {
+    animation-name: showOpen;
+  }
+
+  @keyframes showClose {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    51% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes showOpen {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    51% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   </style>
