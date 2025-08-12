@@ -1,8 +1,10 @@
 ---
-const { isContactPage } = Astro.props;
+const { isContactPage, isDoorFixed = false } = Astro.props;
 
+const position = isDoorFixed ? 'fixed' : 'absolute';
+const bottom = isDoorFixed ? '0' : 'none';
 ---
-<footer class="footer">
+<footer class="footer" >
   <a href="/" class="door-link">
     <img
       src="/images/door/yellowdoorclose.png"
@@ -16,14 +18,17 @@ const { isContactPage } = Astro.props;
     />
   </a>
   {isContactPage && (
+    <div class="mailbox-wrapper">
       <a href="mailto:ammsbbhatt@gmail.com" class="mailbox-link" title="Email Me">
         <img src="/images/mailbox.png" alt="Mailbox" class="mailbox-image" />
+        <span class="tooltip">Send a message</span>
       </a>
+      </div>
     )}
   </div>
 
 </footer>
-<style>
+<style define:vars={{position, bottom}}>
   .footer {
     display: flex;
     justify-content: center;
@@ -41,10 +46,11 @@ const { isContactPage } = Astro.props;
   }
 
   .door-image {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: var(--position);
+    bottom: var(--bottom);
+    left: 50%;
     width: 100%;
+    max-width: 160px;
     transition: opacity 0.3s ease-in-out;
   }
 
@@ -76,7 +82,7 @@ const { isContactPage } = Astro.props;
   }
 
   .mailbox-image {
-    width: 100%;
+    width: 130%;
     height: auto;
     transition: transform 0.2s ease-in-out;
   }
@@ -84,5 +90,60 @@ const { isContactPage } = Astro.props;
   .mailbox-link:hover .mailbox-image {
     transform: scale(1.1);
   }
+.mailbox-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
+.tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: black;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+
+  animation: tooltipPop 0.6s ease forwards 0.5s, tooltipFadeOut 0.5s ease forwards 3s;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+@keyframes tooltipFadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+@keyframes tooltipPop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
+  80% {
+    transform: translateX(-50%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
 </style>
