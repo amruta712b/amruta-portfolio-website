@@ -86,7 +86,7 @@ const bottom = isDoorFixed ? '0' : 'none';
 
     width: 140%;
     height: auto;
-    transition: transform 0.2s ease-in-out;
+    animation: wiggle 5s ease-in-out infinite;
   }
 
   .mailbox-link:hover .mailbox-image {
@@ -102,16 +102,18 @@ const bottom = isDoorFixed ? '0' : 'none';
   bottom: 120%;
   left: 50%;
   transform: translateX(-50%) scale(0.8);
-  background: black;
-  color: white;
+  background: #fffbe6;
+    color: black;
+    border: 2px solid #fbd21a;
+    font-family: sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 6px 10px;
   border-radius: 4px;
   font-size: 0.85rem;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-
-  animation: tooltipPop 0.6s ease forwards 0.5s, tooltipFadeOut 0.5s ease forwards 3s;
+  animation: tooltipCycle 5s ease-in-out infinite;
 }
 
 .tooltip::after {
@@ -125,27 +127,35 @@ const bottom = isDoorFixed ? '0' : 'none';
   border-color: black transparent transparent transparent;
 }
 
-@keyframes tooltipFadeOut {
-  to {
-    opacity: 0;
-    transform: translateX(-50%) scale(0.9);
-  }
-}
-@keyframes tooltipPop {
+@keyframes tooltipCycle {
   0% {
     opacity: 0;
     transform: translateX(-50%) scale(0.8);
   }
-  60% {
+  10% {
     opacity: 1;
     transform: translateX(-50%) scale(1.05);
   }
-  80% {
-    transform: translateX(-50%) scale(0.95);
+  20% {
+    transform: translateX(-50%) scale(1);
   }
-  100% {
+  60% {
     opacity: 1;
     transform: translateX(-50%) scale(1);
   }
+  80% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+}
+@keyframes wiggle {
+  0%, 90%, 100% { transform: rotate(0deg); }
+  93% { transform: rotate(-5deg); }
+  96% { transform: rotate(5deg); }
+  99% { transform: rotate(-3deg); }
 }
 </style>
