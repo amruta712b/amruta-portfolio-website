@@ -67,23 +67,23 @@ const bottom = isDoorFixed ? '0' : 'none';
     opacity: 0;
   }
   mailbox {
+
   position: fixed;
   bottom: 0;
   left: 50px; /* adjust horizontal placement */
   z-index: 10; /* so it appears above background */
 }
  .mailbox-link {
+  left: 58%;
+    bottom: -2px;
     position: fixed; /* pins it relative to viewport */
-    bottom: 5px; /* distance from bottom edge */
-    left: 180px; /* distance from left edge (adjust so it's near the door) */
     width: 100px;
     cursor: pointer;
     z-index: 100;
   }
 
   .mailbox-image {
-    left: 55%;
-    bottom: -2px;
+
     width: 140%;
     height: auto;
     transition: transform 0.2s ease-in-out;
