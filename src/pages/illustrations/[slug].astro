@@ -1,0 +1,87 @@
+---
+import FixedSidebarLayout from "../../layouts/FixedSidebarLayout.astro";
+import YellowBgFooter from "../../layouts/YellowBgFooter.astro";
+import "../../styles/global.css";
+import data from "../../data/illustrations.json";
+
+export async function getStaticPaths() {
+  return data.map((item) => ({
+    params: { slug: item.URL },
+    props: {
+      title: item.title,
+      description: item.Description,
+      filename: item["file name"],
+    },
+  }));
+}
+
+const { title, description, filename } = Astro.props;
+---
+
+<FixedSidebarLayout title={title}>
+  <main class="artwork-page">
+    <div class="artwork-image">
+      <img src={`/images/works/illustrations/${filename}`} alt={title} />
+    </div>
+    <div class="artwork-text">
+      <h1>
+        <span class="highlight">{title}</span>
+      </h1>
+      <h2 class="year">2022</h2>
+      <p>
+        {description}
+      </p>
+      <a
+        href="https://www.baps.org/About-BAPS/TheFounder%e2%80%80%93BhagwanSwaminarayan/Life/TeenageYogi-NeelkanthVarni.aspx"
+        class="more-link"
+      >
+        Click here to know more
+      </a>
+    </div>
+  </main>
+  <YellowBgFooter />
+</FixedSidebarLayout>
+
+<style>
+  .artwork-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #fbd21a;
+    min-height: 100vh;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .artwork-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .artwork-text {
+    color: white;
+  }
+  .highlight {
+    background-color: white;
+    color: #fbd21a;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    font-family: "Lilita One", cursive;
+  }
+  .year {
+    font-weight: bold;
+    font-family: "Lilita One", cursive;
+    margin: 0.5rem 0 1rem;
+  }
+  .more-link {
+    display: inline-block;
+    background-color: white;
+    color: #fbd21a;
+    font-weight: bold;
+    padding: 0.3rem 0.6rem;
+    margin-top: 1rem;
+    text-decoration: none;
+  }
+  .more-link:hover {
+    background-color: #fff7b3;
+  }
+</style>
