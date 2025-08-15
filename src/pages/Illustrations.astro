@@ -10,8 +10,18 @@ function getGridClass(index) {
     "wide-medium",
     "wide-large",
     "wide-medium",
-    "wide-tall-medium",
+    "wide-medium",
+    "wide-large",
     "tall-medium",
+    "tall-medium",
+    "tall-medium",
+    "tall-medium",
+    "wide-medium",
+    "wide-medium",
+    "wide-small",
+    "wide-small",
+    "wide-small",
+    "wide-small",
   ];
   return classes[index % classes.length] || "";
 }
@@ -80,6 +90,7 @@ function getGridClass(index) {
   }
 
   .grid-item {
+    object-fit: cover;
     background: white;
     overflow: hidden;
     display: block;
@@ -113,6 +124,10 @@ function getGridClass(index) {
   .wide-tall-medium {
     grid-column: span 2;
     grid-row: span 2;
+  }
+  .wide-small {
+    grid-column: span 1;
+    grid-row: span 1;
   }
   .scroll-indicator {
     bottom: 10px;
