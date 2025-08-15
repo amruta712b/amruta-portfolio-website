@@ -11,11 +11,15 @@ export async function getStaticPaths() {
       title: item.title,
       description: item.Description,
       filename: item["file name"],
+      year: item.year,
+      uttonText: item.buttonText,
+      buttonLink: item.buttonLink
     },
   }));
 }
 
-const { title, description, filename } = Astro.props;
+const { title, description, filename, year, buttonText, buttonLink } = Astro.props;
+
 ---
 
 <FixedSidebarLayout title={title}>
@@ -27,16 +31,11 @@ const { title, description, filename } = Astro.props;
       <h1>
         <span class="highlight">{title}</span>
       </h1>
-      <h2 class="year">2022</h2>
-      <p>
-        {description}
-      </p>
-      <a
-        href="https://www.baps.org/About-BAPS/TheFounder%e2%80%80%93BhagwanSwaminarayan/Life/TeenageYogi-NeelkanthVarni.aspx"
-        class="more-link"
-      >
-        Click here to know more
-      </a>
+      {year && <p class="year">{year}</p>}
+      {buttonText && buttonLink && (
+  <a href={buttonLink} class="buttonText">{buttonText}</a>
+)}
+
     </div>
   </main>
   <YellowBgFooter />
@@ -72,7 +71,8 @@ const { title, description, filename } = Astro.props;
     font-family: "Lilita One", cursive;
     margin: 0.5rem 0 1rem;
   }
-  .more-link {
+  .buttonText {
+    
     display: inline-block;
     background-color: white;
     color: #fbd21a;
@@ -81,7 +81,7 @@ const { title, description, filename } = Astro.props;
     margin-top: 1rem;
     text-decoration: none;
   }
-  .more-link:hover {
+  .buttonText:hover {
     background-color: #fff7b3;
   }
 </style>

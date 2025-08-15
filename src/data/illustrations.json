@@ -2,108 +2,127 @@
   {
     "URL": "nilkanthvarni-illustration",
     "title": "Yogi and his austerities",
-    "Description": "some description",
-    "file name": "nilkanthvarni.webp"
-  },
+    "Description": "Neelkanth left home with only a few possessions: a loin cloth, a small scripture, a murti, and a begging bowl.  He traveled with only what was necessary, renounced His family and other worldly possessions, and continued His lifelong journey of bringing people closer to God. While traveling through the Himalayas, Neelkanth endured the severe climate of the coldest months of the year, a time when even the residents of the Himalayas migrate to warmer temperatures.  Despite the physical challenges, Neelkanth climbed a height of 12,500 feet to arrive at the revered mandir dedicated to Vishnu, Muktinath.  Here, He spent four months engaged in penance despite harsh temperatures, freezing rainfall, and piercing winds.",
+    "file name": "nilkanthvarni.webp",
+    "year": "2022",
+  "buttonText": "Read More",
+    "buttonLink": "https://example.com/more-info"
+},
   {
     "URL": "14years-illustration",
     "title": "14 years of RAJA",
     "Description": "some description",
-    "file name": "dog1.webp"
+    "file name": "dog1.webp",
+    "year": "2023"
   },
    {
     "URL": "yogi-saint-illustration",
     "title": "Yogi and Saint",
     "Description": "some description",
-    "file name": "msmvarni.webp"
+    "file name": "msmvarni.webp",
+    "year": "2021"
   },
   {
     "URL": "csr-illustration",
     "title": "Corporate Social Responsibility",
     "Description": "some description",
     "class": "wide-larg",
-    "file name": "csr.webp"
+    "file name": "csr.webp",
+    "year": "2023"
   },
   {
     "URL": "raghurajpur-illustration",
     "title": "Door of Raghurajpur",
     "Description": "some description",
-    "file name": "raghurajpur.webp"
+    "file name": "raghurajpur.webp",
+    "year": "2023"
   },
   {
     "URL": "decorconceptuals-illustration",
     "title": "Wedding Decor Conceptuals",
     "Description": "some description",
-    "file name": "weddingillustration.webp"
+    "file name": "weddingillustration.webp",
+    "year": "2024"
   },
   {
     "URL": "yogi-swans-illustration",
     "title": "Yogi and his austerities",
     "Description": "some description",
-    "file name": "varnisarovar.webp"
+    "file name": "varnisarovar.webp",
+    "year": "2021"
   },
   {
     "URL": "yogin-in-forest-illustration",
     "title": "Yogi's fearlessness",
     "Description": "some description",
-    "file name": "varniforest.webp"
+    "file name": "varniforest.webp",
+    "year": "2020"
   },
   {
     "URL": "yogi-underwater-illustration",
     "title": "Yogi's underwater meditation",
     "Description": "some description",
-    "file name": "varniunderwater.webp"
+    "file name": "varniunderwater.webp",
+    "year": "2021"
   },
   {
     "URL": "psm100-illustration",
     "title": "Guru and Shishya",
     "Description": "some description",
-    "file name": "psm100.webp"
+    "file name": "psm100.webp",
+    "year": "2022"
   },
   {
     "URL": "my-saviour",
     "title": "My pawsome friend - Mr.Saviour",
     "Description": "some description",
-    "file name": "rajame.webp"
+    "file name": "rajame.webp",
+    "year": "2020"
   },
   {
     "URL": "yogi-deer-illustration",
     "title": "Yogi's interaction with deer",
     "Description": "some description",
-    "file name": "varnideer.webp"
+    "file name": "varnideer.webp",
+    "year": "2021"
   },
   {
     "URL": "raja13-illustration",
     "title": "13th Birthday of Raja",
     "Description": "some description",
-    "file name": "raja13.webp"
+    "file name": "raja13.webp",
+    "year": "2022"
   },
 
   {
     "URL": "foh-illustration",
     "title": "Festival of Harmony",
     "Description": "some description",
-    "file name": "foh.webp"
+    "file name": "foh.webp",
+    "year": "2023"
   },
   {
     "URL": "yogi-with-fireflies-illustration",
     "title": "Yogi's glow amidst darkness",
     "Description": "some description",
-    "file name": "varnifirefly.webp"
+    "file name": "varnifirefly.webp",
+    "year": "2020"
   },
 
   {
     "URL": "akshardham-illustration",
     "title": "Robbinsville Akshardham",
     "Description": "some description",
-    "file name": "akdm.webp"
+    "file name": "akdm.webp",
+    "year": "2023"
   },
 
   {
     "URL": "girl-and-idol-illustration",
     "title": "Little girl's idol (murti)",
     "Description": "some description",
-    "file name": "godbhakt.webp"
+    "file name": "godbhakt.webp",
+    "year": "2025"
   }
 
 ]
