@@ -52,8 +52,8 @@ import "../styles/global.css";
       </div>
 
       <!-- Project 2 (reverse order with grid) -->
-      <div class="project reverse">
-        <div class="project-image big">
+      <div class="project ">
+        <div class="project-image-big">
           <img src="/images/works/kids/coverpage2.png" alt="Power of 1 Book" />
         </div>
         <div class="project-text">
@@ -73,8 +73,8 @@ import "../styles/global.css";
       </div>
 
       <!-- Project 3 -->
-      <div class="project">
-        <div class="project-image big">
+      <div class="project reverse">
+        <div class="project-image-big">
           <img src="/images/works/kids/frogstory.png" alt="The Frog Story" />
         </div>
         <div class="project-text">
@@ -100,6 +100,7 @@ import "../styles/global.css";
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    align-items: center;
     background-color: white;
     position: relative;
   }
@@ -200,45 +201,63 @@ flex-direction: column;
 .project {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "image text"
+    "image index";
   gap: 2.5rem;
   align-items: start;
 }
 .project.reverse {
-  grid-template-areas: "text image"; /* Fix reverse layout */
+  grid-template-areas: "text image"; /* reverse: text left, image right */
+}
+.project .project-image {
+  grid-area: image;
+}
+.project .project-text {
+  grid-area: text;
 }
 .project-1 {
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "image text";
+  display: grid;   /* ✅ Added */
+  grid-template-columns: 1fr 1fr; /* ✅ Added */
+  grid-template-areas: "image text"; /* ✅ Added */
+  gap: 2.5rem; /* ✅ Added */
+  align-items: start; /* ✅ Added */
 }
 .project-1 .project-image { grid-area: image; }
 .project-1 .project-text { grid-area: text; }
-
-/* ✅ Ensure index image goes below text */
-.project-1 .index-image {
-  margin-top: 1.5rem;
+.project-1 .index-image  {
+  grid-area: index;
+  justify-self: end;   /* ✅ pushes it to the right side */
 }
+
 .project-1 .index-image img {
+  max-width: 600px; /* keep it controlled */
+}
+
+
+/* Project 1 (Bal Nagari) */
+.project-1 .project-image img {
+  max-width: 400px; /* smaller than before */
+}
+
+
+
+/* ✅ Proper sizing for big images */
+.project-image-big img {
   width: 100%;
-  max-width: 400px;
-  border-radius: 8px;
+  max-width: 750px; /* ✅ set a controlled size for coverpage2 & frogstory */
 }
 
-/* ✅ Bigger images for Project 2 & 3 */
-.project-image.big img {
-  max-width: 600px; /* bigger */
-}
-
-/* Default images */
-.project-image img {
-  width: 100%;
-  max-width: 450px;
-
-}
 
 /* Text styling */
 .project-text {
-  max-width: 600px;
+  max-width: 600px;}
+
+.project-1 .project-text {
+  grid-area: text;
+  max-width: 800px;   /* ✅ allow it to expand fully */
 }
+
 .project-text h1 {
   max-width: fit-content;
   text-align: left;
